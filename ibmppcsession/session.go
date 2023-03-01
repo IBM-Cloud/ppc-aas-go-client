@@ -7,8 +7,8 @@ import (
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/IBM-Cloud/ppc-aas-go-sdk/helpers"
-	"github.com/IBM-Cloud/ppc-aas-go-sdk/ppc-aas/client"
+	"github.com/IBM-Cloud/ppc-aas-go-client/helpers"
+	"github.com/IBM-Cloud/ppc-aas-go-client/ppc-aas/client"
 	"github.com/IBM/go-sdk-core/v5/core"
 )
 

@@ -10,7 +10,7 @@ import (
 	"regexp"
 	"strings"
 
-	"github.com/IBM-Cloud/ppc-aas-go-sdk/ppc-aas/client"
+	"github.com/IBM-Cloud/ppc-aas-go-client/ppc-aas/client"
 	"github.com/IBM/go-sdk-core/v5/core"
 	"github.com/go-openapi/runtime"
 	httptransport "github.com/go-openapi/runtime/client"

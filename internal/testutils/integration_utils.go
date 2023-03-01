@@ -31,8 +31,8 @@ import (
 	"testing"
 	"time"
 
-	client "github.com/IBM-Cloud/ppc-aas-go-sdk/clients/instance"
-	ps "github.com/IBM-Cloud/ppc-aas-go-sdk/ibmppcsession"
+	client "github.com/IBM-Cloud/ppc-aas-go-client/clients/instance"
+	ps "github.com/IBM-Cloud/ppc-aas-go-client/ibmppcsession"
 	core "github.com/IBM/go-sdk-core/v5/core"
 	"github.com/stretchr/testify/require"
 )

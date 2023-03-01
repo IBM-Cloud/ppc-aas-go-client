@@ -5,7 +5,7 @@ import (
 	"errors"
 	"reflect"
 
-	"github.com/IBM-Cloud/ppc-aas-go-sdk/ppc-aas/models"
+	"github.com/IBM-Cloud/ppc-aas-go-client/ppc-aas/models"
 )
 
 // start of Placementgroup Messages

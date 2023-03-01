@@ -12,7 +12,7 @@ import (
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/IBM-Cloud/ppc-aas-go-sdk/ppc-aas/models"
+	"github.com/IBM-Cloud/ppc-aas-go-client/ppc-aas/models"
 )
 
 // PcloudV1CloudinstancesCosimagesGetReader is a Reader for the PcloudV1CloudinstancesCosimagesGet structure.

@@ -4,9 +4,9 @@ import (
 	"context"
 	"testing"
 
-	utl "github.com/IBM-Cloud/ppc-aas-go-sdk/internal/testutils"
+	utl "github.com/IBM-Cloud/ppc-aas-go-client/internal/testutils"
 
-	client "github.com/IBM-Cloud/ppc-aas-go-sdk/clients/instance"
+	client "github.com/IBM-Cloud/ppc-aas-go-client/clients/instance"
 	"github.com/stretchr/testify/require"
 )
 

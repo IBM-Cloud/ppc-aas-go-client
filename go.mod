@@ -1,4 +1,4 @@
-module github.com/IBM-Cloud/ppc-aas-go-sdk
+module github.com/IBM-Cloud/ppc-aas-go-client
 
 go 1.17
 

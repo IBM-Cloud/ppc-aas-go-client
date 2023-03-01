@@ -15,7 +15,7 @@ import (
 	cr "github.com/go-openapi/runtime/client"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/IBM-Cloud/ppc-aas-go-sdk/ppc-aas/models"
+	"github.com/IBM-Cloud/ppc-aas-go-client/ppc-aas/models"
 )
 
 // NewInternalV1StorageRegionsStoragePoolsPutParams creates a new InternalV1StorageRegionsStoragePoolsPutParams object,

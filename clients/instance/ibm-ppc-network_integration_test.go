@@ -7,13 +7,13 @@ import (
 	"strconv"
 	"testing"
 
-	utl "github.com/IBM-Cloud/ppc-aas-go-sdk/internal/testutils"
+	utl "github.com/IBM-Cloud/ppc-aas-go-client/internal/testutils"
 
 	"github.com/apparentlymart/go-cidr/cidr"
 	"github.com/stretchr/testify/require"
 
-	client "github.com/IBM-Cloud/ppc-aas-go-sdk/clients/instance"
-	"github.com/IBM-Cloud/ppc-aas-go-sdk/ppc-aas/models"
+	client "github.com/IBM-Cloud/ppc-aas-go-client/clients/instance"
+	"github.com/IBM-Cloud/ppc-aas-go-client/ppc-aas/models"
 )
 
 func TestNetwork(t *testing.T) {

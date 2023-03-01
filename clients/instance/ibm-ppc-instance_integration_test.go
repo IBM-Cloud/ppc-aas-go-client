@@ -6,10 +6,10 @@ import (
 	"testing"
 	"time"
 
-	utl "github.com/IBM-Cloud/ppc-aas-go-sdk/internal/testutils"
+	utl "github.com/IBM-Cloud/ppc-aas-go-client/internal/testutils"
 
-	client "github.com/IBM-Cloud/ppc-aas-go-sdk/clients/instance"
-	"github.com/IBM-Cloud/ppc-aas-go-sdk/ppc-aas/models"
+	client "github.com/IBM-Cloud/ppc-aas-go-client/clients/instance"
+	"github.com/IBM-Cloud/ppc-aas-go-client/ppc-aas/models"
 	"github.com/stretchr/testify/require"
 )
 

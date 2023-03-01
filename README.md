@@ -1,12 +1,12 @@
-![GitHub go.mod Go version](https://img.shields.io/github/go-mod/go-version/IBM-Cloud/ppc-aas-go-sdk)
-![GitHub release (latest by date)](https://img.shields.io/github/v/release/IBM-Cloud/ppc-aas-go-sdk)
-![GitHub Workflow Status](https://img.shields.io/github/workflow/status/IBM-Cloud/ppc-aas-go-sdk/Go)
-![GitHub contributors](https://img.shields.io/github/contributors/IBM-Cloud/ppc-aas-go-sdk?color=blueviolet)
-![GitHub](https://img.shields.io/github/license/IBM-Cloud/ppc-aas-go-sdk)
+![GitHub go.mod Go version](https://img.shields.io/github/go-mod/go-version/IBM-Cloud/ppc-aas-go-client)
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/IBM-Cloud/ppc-aas-go-client)
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/IBM-Cloud/ppc-aas-go-client/Go)
+![GitHub contributors](https://img.shields.io/github/contributors/IBM-Cloud/ppc-aas-go-client?color=blueviolet)
+![GitHub](https://img.shields.io/github/license/IBM-Cloud/ppc-aas-go-client)
 
 # IBM Cloud SDK for Power Cloud
 
-The ppc-aas-go-sdk project provides the Go SDK for IBM® Power Systems™ Virtual Server.
+The ppc-aas-go-client project provides the Go SDK for IBM® Power Systems™ Virtual Server.
 
 ## Prerequisites
 
@@ -24,7 +24,7 @@ Install the SDK using the following methods.
 
 Use this command to download and install the SDK to allow your Go application to use it:
 ```
-go get -u github.com/IBM-Cloud/ppc-aas-go-sdk
+go get -u github.com/IBM-Cloud/ppc-aas-go-client
 ```
 
 ### Go modules
@@ -32,7 +32,7 @@ go get -u github.com/IBM-Cloud/ppc-aas-go-sdk
 If your application is using Go modules, you can add a suitable import to your Go application, like this:
 ```go
 import (
-  "github.com/IBM-Cloud/ppc-aas-go-sdk"
+  "github.com/IBM-Cloud/ppc-aas-go-client"
 )
 ```
 then run `go mod tidy` to download and install the new dependency and update your Go application's
@@ -44,7 +44,7 @@ If your application is using the `dep` dependency management tool, you can add a
 to your `Gopkg.toml` file. Here is an example:
 ```
 [[constraint]]
-  name = "github.com/IBM-Cloud/ppc-aas-go-sdk"
+  name = "github.com/IBM-Cloud/ppc-aas-go-client"
   version = "1.1.0"
 
 ```
@@ -55,7 +55,7 @@ then run `dep ensure`.
 First you need to create a session and use it for creating the client.
 
 ```golang
-import "github.com/IBM-Cloud/ppc-aas-go-sdk/ibmpisession"
+import "github.com/IBM-Cloud/ppc-aas-go-client/ibmpisession"
 
 func main(){
     o := &ibmpisession.IBMPIOptions{
@@ -82,7 +82,7 @@ Also you can refer to the [examples](examples) directory for some resources that
 
 ## Issues
 
-If you encounter an issue with the project please [report here.](https://github.com/IBM-Cloud/ppc-aas-go-sdk/issues).
+If you encounter an issue with the project please [report here.](https://github.com/IBM-Cloud/ppc-aas-go-client/issues).
 
 ## Development
 

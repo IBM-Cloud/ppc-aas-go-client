@@ -8,9 +8,9 @@ import (
 
 	"github.com/apparentlymart/go-cidr/cidr"
 
-	v "github.com/IBM-Cloud/ppc-aas-go-sdk/clients/instance"
-	ps "github.com/IBM-Cloud/ppc-aas-go-sdk/ibmppcsession"
-	"github.com/IBM-Cloud/ppc-aas-go-sdk/ppc-aas/models"
+	v "github.com/IBM-Cloud/ppc-aas-go-client/clients/instance"
+	ps "github.com/IBM-Cloud/ppc-aas-go-client/ibmppcsession"
+	"github.com/IBM-Cloud/ppc-aas-go-client/ppc-aas/models"
 	"github.com/IBM/go-sdk-core/v5/core"
 )
 

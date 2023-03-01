@@ -4,10 +4,10 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/IBM-Cloud/ppc-aas-go-sdk/helpers"
-	"github.com/IBM-Cloud/ppc-aas-go-sdk/ibmppcsession"
-	"github.com/IBM-Cloud/ppc-aas-go-sdk/ppc-aas/client/p_cloud_p_vm_instances"
-	"github.com/IBM-Cloud/ppc-aas-go-sdk/ppc-aas/models"
+	"github.com/IBM-Cloud/ppc-aas-go-client/helpers"
+	"github.com/IBM-Cloud/ppc-aas-go-client/ibmppcsession"
+	"github.com/IBM-Cloud/ppc-aas-go-client/ppc-aas/client/p_cloud_p_vm_instances"
+	"github.com/IBM-Cloud/ppc-aas-go-client/ppc-aas/models"
 )
 
 // IBMPPCInstanceClient

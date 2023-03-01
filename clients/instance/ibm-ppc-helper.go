@@ -3,7 +3,7 @@ package instance
 import (
 	"context"
 
-	"github.com/IBM-Cloud/ppc-aas-go-sdk/ibmppcsession"
+	"github.com/IBM-Cloud/ppc-aas-go-client/ibmppcsession"
 )
 
 // Helper methods that will be used by the client classes

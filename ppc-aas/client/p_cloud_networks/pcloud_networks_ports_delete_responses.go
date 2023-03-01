@@ -12,7 +12,7 @@ import (
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/IBM-Cloud/ppc-aas-go-sdk/ppc-aas/models"
+	"github.com/IBM-Cloud/ppc-aas-go-client/ppc-aas/models"
 )
 
 // PcloudNetworksPortsDeleteReader is a Reader for the PcloudNetworksPortsDelete structure.

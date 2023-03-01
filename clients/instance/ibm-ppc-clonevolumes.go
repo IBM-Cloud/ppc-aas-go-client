@@ -4,12 +4,12 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/IBM-Cloud/ppc-aas-go-sdk/errors"
-	"github.com/IBM-Cloud/ppc-aas-go-sdk/ibmppcsession"
+	"github.com/IBM-Cloud/ppc-aas-go-client/errors"
+	"github.com/IBM-Cloud/ppc-aas-go-client/ibmppcsession"
 
-	"github.com/IBM-Cloud/ppc-aas-go-sdk/helpers"
-	"github.com/IBM-Cloud/ppc-aas-go-sdk/ppc-aas/client/p_cloud_volumes"
-	"github.com/IBM-Cloud/ppc-aas-go-sdk/ppc-aas/models"
+	"github.com/IBM-Cloud/ppc-aas-go-client/helpers"
+	"github.com/IBM-Cloud/ppc-aas-go-client/ppc-aas/client/p_cloud_volumes"
+	"github.com/IBM-Cloud/ppc-aas-go-client/ppc-aas/models"
 )
 
 // IBMPPCCloneVolumeClient
