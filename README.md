@@ -4,9 +4,9 @@
 ![GitHub contributors](https://img.shields.io/github/contributors/IBM-Cloud/ppc-aas-go-client?color=blueviolet)
 ![GitHub](https://img.shields.io/github/license/IBM-Cloud/ppc-aas-go-client)
 
-# IBM Cloud SDK for Power Cloud
+# IBM Cloud SDK for Power Private Cloud aaS
 
-The ppc-aas-go-client project provides the Go SDK for IBM® Power Systems™ Virtual Server.
+The ppc-aas-go-client project provides the Go SDK for IBM® Stratos for Power (Power Private Cloud aaS).
 
 ## Prerequisites
 
