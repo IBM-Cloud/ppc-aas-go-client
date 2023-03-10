@@ -33,8 +33,8 @@ type NetworkCreate struct {
 	// IP Address Ranges
 	IPAddressRanges []*IPAddressRange `json:"ipAddressRanges"`
 
-	// Enable MTU Jumbo Network
-	Jumbo bool `json:"jumbo,omitempty"`
+	// Maximum transmission unit
+	Mtu int64 `json:"mtu,omitempty"`
 
 	// Network Name
 	Name string `json:"name,omitempty"`
@@ -43,6 +43,19 @@ type NetworkCreate struct {
 	// Required: true
 	// Enum: [vlan pub-vlan]
 	Type *string `json:"type"`
+}
+
+func (m *NetworkCreate) UnmarshalJSON(b []byte) error {
+	type NetworkCreateAlias NetworkCreate
+	var t NetworkCreateAlias
+	if err := json.Unmarshal([]byte("{\"mtu\":1450}"), &t); err != nil {
+		return err
+	}
+	if err := json.Unmarshal(b, &t); err != nil {
+		return err
+	}
+	*m = NetworkCreate(t)
+	return nil
 }
 
 // Validate validates this network create
