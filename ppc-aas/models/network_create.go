@@ -33,8 +33,10 @@ type NetworkCreate struct {
 	// IP Address Ranges
 	IPAddressRanges []*IPAddressRange `json:"ipAddressRanges"`
 
-	// Enable MTU Jumbo Network
-	Jumbo bool `json:"jumbo,omitempty"`
+	// Maximum transmission unit
+	// Maximum: 9000
+	// Minimum: 1450
+	Mtu *int64 `json:"mtu,omitempty"`
 
 	// Network Name
 	Name string `json:"name,omitempty"`
@@ -45,11 +47,28 @@ type NetworkCreate struct {
 	Type *string `json:"type"`
 }
 
+func (m *NetworkCreate) UnmarshalJSON(b []byte) error {
+	type NetworkCreateAlias NetworkCreate
+	var t NetworkCreateAlias
+	if err := json.Unmarshal([]byte("{\"mtu\":1450}"), &t); err != nil {
+		return err
+	}
+	if err := json.Unmarshal(b, &t); err != nil {
+		return err
+	}
+	*m = NetworkCreate(t)
+	return nil
+}
+
 // Validate validates this network create
 func (m *NetworkCreate) Validate(formats strfmt.Registry) error {
 	var res []error
 
 	if err := m.validateIPAddressRanges(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateMtu(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -84,6 +103,22 @@ func (m *NetworkCreate) validateIPAddressRanges(formats strfmt.Registry) error {
 			}
 		}
 
+	}
+
+	return nil
+}
+
+func (m *NetworkCreate) validateMtu(formats strfmt.Registry) error {
+	if swag.IsZero(m.Mtu) { // not required
+		return nil
+	}
+
+	if err := validate.MinimumInt("mtu", "body", *m.Mtu, 1450, false); err != nil {
+		return err
+	}
+
+	if err := validate.MaximumInt("mtu", "body", *m.Mtu, 9000, false); err != nil {
+		return err
 	}
 
 	return nil
