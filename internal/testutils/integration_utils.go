@@ -88,7 +88,7 @@ func init() {
 	loadString(&NetworkName, "NetworkName", "NETWORK_NAME", "network")
 	loadString(&NetworkCidr, "NetworkCidr", "NETWORK_CIDR", "network")
 	loadString(&NetworkDNSServer, "NetworkDNSServer", "NETWORK_DNS_SERVER", "network")
-	loadBool(&NetworkJumbo, "NetworkJumbo", "NetworkJumbo", "network")
+	loadInt64(&NetworkMtu, "NetworkMtu", "NetworkMtu", "network")
 	loadString(&NetworkType, "NetworkType", "NETWORK_TYPE", "network")
 
 	// Snapshot
@@ -217,7 +217,7 @@ func NetworkPreCheck(t *testing.T) {
 	ifNil(t, NetworkName, "NetworkName", "network")
 	ifNil(t, NetworkCidr, "NetworkCidr", "network")
 	ifNil(t, NetworkDNSServer, "NetworkDNSServer", "network")
-	ifNil(t, NetworkJumbo, "NetworkJumbo", "network")
+	ifNil(t, NetworkMtu, "NetworkMtu", "network")
 	ifNil(t, NetworkType, "NetworkType", "network")
 }
 

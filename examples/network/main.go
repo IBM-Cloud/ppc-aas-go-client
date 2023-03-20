@@ -38,7 +38,7 @@ func main() {
 	dnsServers := make([]string, 1)
 	dnsServers[0] = "127.0.0.1"
 	gateway, startIP, endIP := generateIPData(cidr)
-	jumbo := false
+	var mtu int64 = 1450
 
 	authenticator := &core.BearerTokenAuthenticator{
 		BearerToken: token,
@@ -66,9 +66,9 @@ func main() {
 		log.Fatal(err)
 	}
 	body := &models.NetworkCreate{
-		Type:  &netType,
-		Name:  name,
-		Jumbo: jumbo,
+		Type: &netType,
+		Name: name,
+		Mtu:  &mtu,
 	}
 	if netType == "vlan" {
 		ipbody := []*models.IPAddressRange{

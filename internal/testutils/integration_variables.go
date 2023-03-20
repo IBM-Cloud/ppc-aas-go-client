@@ -91,7 +91,7 @@ var NetworkID string = ""                            // NETWORK_ID
 var NetworkName string = "Power-Go-Integration-Test" // NETWORK_NAME
 var NetworkCidr string = "192.168.0.0/24"            // NETWORK_CIDR
 var NetworkDNSServer string = "127.0.0.1"            // NETWORK_DNS_SERVER
-var NetworkJumbo bool = true                         // NETWORK_JUMBO
+var NetworkMtu int64 = 1450                          // NETWORK_MTU
 var NetworkType string = "vlan"                      // NETWORK_TYPE
 
 // Snapshot

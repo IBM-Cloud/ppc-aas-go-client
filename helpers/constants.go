@@ -125,7 +125,7 @@ const (
 	PPCNetworkIPAddressRange  = "ppc_ipaddress_range"
 	PPCNetworkVlanId          = "ppc_vlan_id"
 	PPCNetworkProvisioning    = "build"
-	PPCNetworkJumbo           = "ppc_network_jumbo"
+	PPCNetworkMtu             = "ppc_network_mtu"
 	PPCNetworkPortDescription = "ppc_network_port_description"
 	PPCNetworkPortIPAddress   = "ppc_network_port_ipaddress"
 	PPCNetworkPortMacAddress  = "ppc_network_port_macaddress"
