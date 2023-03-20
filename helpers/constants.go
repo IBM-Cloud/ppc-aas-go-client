@@ -4,7 +4,6 @@ import "time"
 
 const (
 	// IBM PPC Instance
-
 	PPCInstanceName                      = "ppc_instance_name"
 	PPCInstanceDate                      = "ppc_creation_date"
 	PPCInstanceSSHKeyName                = "ppc_key_pair_name"
@@ -67,7 +66,6 @@ const (
 	PPCReplicationEnabled      = "ppc_replication_enabled"
 
 	// IBM PPC Snapshots
-
 	PPCSnapshot         = "ppc_snap_shot_id"
 	PPCSnapshotName     = "ppc_snap_shot_name"
 	PPCSnapshotStatus   = "ppc_snap_shot_status"
@@ -75,7 +73,6 @@ const (
 	PPCSnapshotComplete = "ppc_snap_shot_complete"
 
 	// IBM PPC SAP Profile
-
 	PPCSAPProfileID        = "ppc_sap_profile_id"
 	PPCSAPProfile          = "ppc_sap_profile"
 	PPCSAPProfileMemory    = "ppc_sap_profile_memory"
@@ -89,7 +86,6 @@ const (
 	PPCVolumeCloneFailure = "ppc_volume_clone_failure"
 
 	// IBM PPC Image
-
 	PPCImageName            = "ppc_image_name"
 	PPCImageId              = "ppc_image_id"
 	PPCImageAccessKey       = "ppc_image_access_key"
@@ -107,14 +103,12 @@ const (
 	PPCImageOsType          = "ppc_image_os_type"
 
 	// IBM PPC Key
-
 	PPCKeyName = "ppc_key_name"
 	PPCKey     = "ppc_ssh_key"
 	PPCKeyDate = "ppc_creation_date"
 	PPCKeyId   = "ppc_key_id"
 
 	// IBM PPC Network
-
 	PPCNetworkReady           = "ready"
 	PPCNetworkID              = "ppc_networkid"
 	PPCNetworkName            = "ppc_network_name"
@@ -155,57 +149,7 @@ const (
 	PPCInstanceCaptureCloudStorageAccessKey = "ppc_capture_cloud_storage_access_key"
 	PPCInstanceCaptureCloudStorageSecretKey = "ppc_capture_cloud_storage_secret_key"
 
-	// IBM PPC Cloud Connections
-
-	PPCCloudConnectionName          = "ppc_cloud_connection_name"
-	PPCCloudConnectionStatus        = "ppc_cloud_connection_status"
-	PPCCloudConnectionMetered       = "ppc_cloud_connection_metered"
-	PPCCloudConnectionUserIPAddress = "ppc_cloud_connection_user_ip_address"
-	PPCCloudConnectionIBMIPAddress  = "ppc_cloud_connection_ibm_ip_address"
-	PPCCloudConnectionSpeed         = "ppc_cloud_connection_speed"
-	PPCCloudConnectionPort          = "ppc_cloud_connection_port"
-	PPCCloudConnectionGlobalRouting = "ppc_cloud_connection_global_routing"
-	PPCCloudConnectionId            = "ppc_cloud_connection_id"
-	//PPCCloudConnectionClassic          = "ppc_cloud_connection_classic"
-	PPCCloudConnectionClassicEnabled   = "ppc_cloud_connection_classic_enabled"
-	PPCCloudConnectionClassicGreCidr   = "ppc_cloud_connection_gre_cidr"
-	PPCCloudConnectionClassicGreDest   = "ppc_cloud_connection_gre_destination_address"
-	PPCCloudConnectionClassicGreSource = "ppc_cloud_connection_gre_source_address"
-	PPCCloudConnectionNetworks         = "ppc_cloud_connection_networks"
-	//PPCCloudConnectionVPC              = "ppc_cloud_connection_vpc"
-	PPCCloudConnectionVPCEnabled = "ppc_cloud_connection_vpc_enabled"
-	PPCCloudConnectionVPCCRNs    = "ppc_cloud_connection_vpc_crns"
-	PPCCloudConnectionVPCName    = "ppc_cloud_connection_vpc_name"
-
-	// // IBM PPC VPN Connections
-
-	// PPCVPNConnectionName                       = "ppc_vpn_connection_name"
-	// PPCVPNConnectionId                         = "ppc_vpn_connection_id"
-	// PPCVPNIKEPolicyId                          = "ppc_ike_policy_id"
-	// PPCVPNIPSecPolicyId                        = "ppc_ipsec_policy_id"
-	// PPCVPNConnectionLocalGatewayAddress        = "ppc_local_gateway_address"
-	// PPCVPNConnectionMode                       = "ppc_vpn_connection_mode"
-	// PPCVPNConnectionNetworks                   = "ppc_networks"
-	// PPCVPNConnectionPeerGatewayAddress         = "ppc_peer_gateway_address"
-	// PPCVPNConnectionPeerSubnets                = "ppc_peer_subnets"
-	// PPCVPNConnectionStatus                     = "ppc_vpn_connection_status"
-	// PPCVPNConnectionVpnGatewayAddress          = "ppc_gateway_address"
-	// PPCVPNConnectionDeadPeerDetection          = "ppc_dead_peer_detections"
-	// PPCVPNConnectionDeadPeerDetectionAction    = "ppc_dead_peer_detections_action"
-	// PPCVPNConnectionDeadPeerDetectionInterval  = "ppc_dead_peer_detections_interval"
-	// PPCVPNConnectionDeadPeerDetectionThreshold = "ppc_dead_peer_detections_threshold"
-
-	// // IBM PPC VPN Policy
-	// PPCVPNPolicyId             = "ppc_policy_id"
-	// PPCVPNPolicyName           = "ppc_policy_name"
-	// PPCVPNPolicyDhGroup        = "ppc_policy_dh_group"
-	// PPCVPNPolicyEncryption     = "ppc_policy_encryption"
-	// PPCVPNPolicyKeyLifetime    = "ppc_policy_key_lifetime"
-	// PPCVPNPolicyPresharedKey   = "ppc_policy_preshared_key"
-	// PPCVPNPolicyVersion        = "ppc_policy_version"
-	// PPCVPNPolicyAuthentication = "ppc_policy_authentication"
-	// PPCVPNPolicyPFS            = "ppc_policy_pfs"
-
+	// IBM PPC Jobs
 	JobStatusQueued             = "queued"
 	JobStatusReadyForProcessing = "readyForProcessing"
 	JobStatusInProgress         = "inProgress"
@@ -223,13 +167,11 @@ const (
 	PPCDhcpInstanceMac = "ppc_dhcp_instance_mac"
 
 	// IBM PPC Placement Groups
-
 	PPCPlacementGroupName   = "ppc_placement_group_name"
 	PPCPlacementGroupPolicy = "ppc_placement_group_policy"
 	PPCPlacementGroupID     = "ppc_placement_group_id"
 
 	// Status For all the resources
-
 	PPCVolumeDeleting         = "deleting"
 	PPCVolumeDeleted          = "done"
 	PPCVolumeProvisioning     = "creating"
@@ -243,8 +185,7 @@ const (
 	PPCImageQueStatus         = "queued"
 	PPCImageActiveStatus      = "active"
 
-	//Timeout values for Power VS -
-
+	// Timeout values for Power VS -
 	PPCCreateTimeOut = 5 * time.Minute
 	PPCUpdateTimeOut = 5 * time.Minute
 	PPCDeleteTimeOut = 3 * time.Minute

@@ -62,11 +62,6 @@ const JOB_ERROR = "Cannot find job status for job id %s with cloud instance %s\n
 //	Resource Variables
 //
 // =====================================
-// Cloud Connection
-var CloudConnectionID string = ""                            // CLOUD_CONNECTION_ID
-var CloudConnectionName string = "Power-Go-Integration-Test" // CLOUD_CONNECTION_NAME
-var CloudConnectionSpeed int64 = 50                          // CLOUD_CONNECTION_SPEED
-
 // Image
 var ImageID string = "7fb4ac53-0928-4218-af9c-367e33d7c50e" // IMAGE_ID
 var ImageName string = "Power-Go-Integration-Test"          // IMAGE_NAME
@@ -114,29 +109,3 @@ var VolumeName string = "Power-Go-Integration-Test" // VOLUME_NAME
 var VolumeShareable bool = true                     // VOLUME_SHAREABLE
 var VolumeSize float64 = 20                         // VOLUME_SIZE
 var VolumeType string = "tier1"                     // VOLUME_TYPE
-
-// VPN
-var VpnID string = ""                                            // VPN_ID
-var VpnName string = "Power-Go-Integration-Test"                 // VPN_NAME
-var VpnMode string = "policy"                                    // VPN_MODE
-var VpnNetworkID string = "84ff660d-1d21-40ec-b862-d44b535aea72" // VPN_NETWORK_ID
-var VpnPeerGatewayAddress string = "1.22.124.1"                  // VPN_PEER_GATEWAY_ADDRESS
-var VpnPeerSubnet string = "107.0.0.0/24"                        // VPN_PEER_SUBNET
-
-// VPN IKE Policy
-var IKEPolicyID string = ""                            // IKE_POLICY_ID
-var IKEPolicyName string = "Power-Go-Integration-Test" // IKE_POLICY_NAME
-var IKEPolicyDhGroup int64 = 1                         // IKE_POLICY_DH_GROUP
-var IKEPolicyEncryption string = "aes-256-cbc"         // IKE_POLICY_ENCRYPTION
-var IKEPolicyKeyLifetime int = 180                     // IKE_POLICY_KEY_LIFETIME
-var IKEPolicyPresharedKey string = "test"              // IKE_POLICY_PRESHARED_KEY
-var IKEPolicyVersion int64 = 1                         // IKE_POLICY_VERSION
-
-// VPN IPSEC Policy
-var IPSecPolicyID string = ""                             // IPSEC_POLICY_ID
-var IPSecPolicyName string = "Power-Go-Integration-Test"  // IPSEC_POLICY_NAME
-var IPSecPolicyAuthentication string = "hmac-sha-256-128" // IPSEC_POLICY_AUTHENTICATION
-var IPSecPolicyDhGroup int64 = 1                          // IPSEC_POLICY_DH_GROUP
-var IPSecPolicyEncryption string = "aes-256-cbc"          // IPSEC_POLICY_ENCRYPTION
-var IPSecPolicyKeyLifetime int = 180                      // IPSEC_POLICY_KEY_LIFETIME
-var IPSecPolicyPfs bool = true                            // IPSEC_POLICY_PFS
