@@ -27,9 +27,9 @@ type NetworkReference struct {
 	// Required: true
 	Href *string `json:"href"`
 
-	// MTU Jumbo Network enabled
+	// Maximum transmission unit
 	// Required: true
-	Jumbo *bool `json:"jumbo"`
+	Mtu *int64 `json:"mtu"`
 
 	// Network Name
 	// Required: true
@@ -57,7 +57,7 @@ func (m *NetworkReference) Validate(formats strfmt.Registry) error {
 		res = append(res, err)
 	}
 
-	if err := m.validateJumbo(formats); err != nil {
+	if err := m.validateMtu(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -92,9 +92,9 @@ func (m *NetworkReference) validateHref(formats strfmt.Registry) error {
 	return nil
 }
 
-func (m *NetworkReference) validateJumbo(formats strfmt.Registry) error {
+func (m *NetworkReference) validateMtu(formats strfmt.Registry) error {
 
-	if err := validate.Required("jumbo", "body", m.Jumbo); err != nil {
+	if err := validate.Required("mtu", "body", m.Mtu); err != nil {
 		return err
 	}
 
