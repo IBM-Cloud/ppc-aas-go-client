@@ -62,10 +62,6 @@ func init() {
 	//   Resource Variables
 	// =====================================
 
-	// Cloud Connection
-	loadString(&CloudConnectionName, "CloudConnectionName", "CLOUD_CONNECTION_NAME", "cloud connection")
-	loadInt64(&CloudConnectionSpeed, "CloudConnectionSpeed", "CLOUD_CONNECTION_SPEED", "cloud connection")
-
 	// DHCP (current tests dont use any env variables)
 
 	// Image
@@ -109,29 +105,6 @@ func init() {
 	loadBool(&VolumeShareable, "VolumeShareable", "VOLUME_SHAREABLE", "volume")
 	loadFloat64(&VolumeSize, "VolumeSize", "VOLUME_SIZE", "volume")
 	loadString(&VolumeType, "VolumeType", "VOLUME_TYPE", "volume")
-
-	// // VPN
-	// loadString(&VpnName, "VpnName", "VPN_NAME", "vpn")
-	// loadString(&VpnMode, "VpnMode", "VPN_MODE", "vpn")
-	// loadString(&VpnNetworkID, "VpnNetworkID", "VPN_NETWORK_ID", "vpn")
-	// loadString(&VpnPeerGatewayAddress, "VpnPeerGatewayAddress", "VPN_PEER_GATEWAY_ADDRESS", "vpn")
-	// loadString(&VpnPeerSubnet, "VpnPeerSubnet", "VPN_PEER_SUBNET", "vpn")
-
-	// // VPN IKE Policy
-	// loadString(&IKEPolicyName, "IKEPolicyName", "IKE_POLICY_NAME", "vpn")
-	// loadInt64(&IKEPolicyDhGroup, "IKEPolicyDhGroup", "IKE_POLICY_DH_GROUP", "vpn")
-	// loadString(&IKEPolicyEncryption, "IKEPolicyEncryption", "IKE_POLICY_ENCRYPTION", "vpn")
-	// loadInt(&IKEPolicyKeyLifetime, "IKEPolicyKeyLifetime", "IKE_POLICY_KEY_LIFETIME", "vpn")
-	// loadString(&IKEPolicyPresharedKey, "IKEPolicyPresharedKey", "IKE_POLICY_PRESHARED_KEY", "vpn")
-	// loadInt64(&IKEPolicyVersion, "IKEPolicyVersion", "IKE_POLICY_VERSION", "vpn")
-
-	// // VPN IPSec Policy
-	// loadString(&IPSecPolicyName, "IPSecPolicyName", "IPSEC_POLICY_NAME", "vpn")
-	// loadString(&IPSecPolicyAuthentication, "IPSecPolicyAuthentication", "IPSEC_POLICY_AUTHENTICATION", "vpn")
-	// loadInt64(&IPSecPolicyDhGroup, "IPSecPolicyDhGroup", "IPSEC_POLICY_DH_GROUP", "vpn")
-	// loadString(&IPSecPolicyEncryption, "IPSecPolicyEncryption", "IPSEC_POLICY_ENCRYPTION", "vpn")
-	// loadInt(&IPSecPolicyKeyLifetime, "IPSecPolicyKeyLifetime", "IPSEC_POLICY_KEY_LIFETIME", "vpn")
-	// loadBool(&IPSecPolicyPfs, "IPSEC_POLICY_PFS", "IPSEC_POLICY_PFS", "vpn")
 }
 
 // AccountPreCheck verifies that all cloud / account variables are defined.
@@ -144,19 +117,6 @@ func AccountPreCheck(t *testing.T) {
 	ifNil(t, CloudInstanceID, "CloudInstanceID", "all")
 	ifNil(t, zone, "zone", "all")
 	ifNil(t, powerEndpoint, "powerEndpoint", "all")
-}
-
-// CloudConnectionPreCheck verifies that all Cloud Connection variables are defined.
-func CloudConnectionPreCheck(t *testing.T) {
-
-	// Skip if testing is disabled
-	if DisableTesting {
-		return
-	}
-
-	AccountPreCheck(t)
-	ifNil(t, CloudConnectionName, "CloudConnectionName", "cloud connection")
-	ifNil(t, CloudConnectionSpeed, "CloudConnectionSpeed", "cloud connection")
 }
 
 // DHCPPreCheck verifies that all DHCP variables are defined.
@@ -275,56 +235,6 @@ func VolumePreCheck(t *testing.T) {
 	ifNil(t, VolumeSize, "VolumeSize", "volume")
 	ifNil(t, VolumeType, "VolumeType", "volume")
 }
-
-// // VPNPreCheck verifies that all VPN variables are defined.
-// func VPNPreCheck(t *testing.T) {
-
-// 	// Skip if testing is disabled
-// 	if DisableTesting {
-// 		return
-// 	}
-
-// 	AccountPreCheck(t)
-// 	ifNil(t, VpnName, "VpnName", "vpn")
-// 	ifNil(t, VpnMode, "VpnMode", "vpn")
-// 	ifNil(t, VpnNetworkID, "VpnNetworkID", "vpn")
-// 	ifNil(t, VpnPeerGatewayAddress, "VpnPeerGatewayAddress", "vpn")
-// 	ifNil(t, VpnPeerSubnet, "VpnPeerSubnet", "vpn")
-// }
-
-// // IKEPolicyPreCheck verifies that all VPN IKE Policy variables are defined.
-// func IKEPolicyPreCheck(t *testing.T) {
-
-// 	// Skip if testing is disabled
-// 	if DisableTesting {
-// 		return
-// 	}
-
-// 	AccountPreCheck(t)
-// 	ifNil(t, IKEPolicyName, "IKEPolicyName", "vpn")
-// 	ifNil(t, IKEPolicyDhGroup, "IKEPolicyDhGroup", "vpn")
-// 	ifNil(t, IKEPolicyEncryption, "IKEPolicyEncryption", "vpn")
-// 	ifNil(t, IKEPolicyKeyLifetime, "IKEPolicyKeyLifetime", "vpn")
-// 	ifNil(t, IKEPolicyPresharedKey, "IKEPolicyPresharedKey", "vpn")
-// 	ifNil(t, IKEPolicyVersion, "IKEPolicyVersion", "vpn")
-// }
-
-// // IPSecPreCheck verifies that all VPN IPSec Policy variables are defined.
-// func IPSecPreCheck(t *testing.T) {
-
-// 	// Skip if testing is disabled
-// 	if DisableTesting {
-// 		return
-// 	}
-
-// 	AccountPreCheck(t)
-// 	ifNil(t, IPSecPolicyName, "IPSecPolicyName", "vpn")
-// 	ifNil(t, IPSecPolicyAuthentication, "IPSecPolicyAuthentication", "vpn")
-// 	ifNil(t, IPSecPolicyDhGroup, "IPSecPolicyDhGroup", "vpn")
-// 	ifNil(t, IPSecPolicyEncryption, "IPSecPolicyEncryption", "vpn")
-// 	ifNil(t, IPSecPolicyKeyLifetime, "IPSecPolicyKeyLifetime", "vpn")
-// 	ifNil(t, IPSecPolicyPfs, "IPSecPolicyPfs", "vpn")
-// }
 
 // TestSession returns an *IBMPPCSession for testing.
 func TestSession(t *testing.T) *ps.IBMPPCSession {

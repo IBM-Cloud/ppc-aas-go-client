@@ -16,27 +16,6 @@ const DeletePlacementGroupOperationFailed = "failed to perform Delete Placement 
 const AddMemberPlacementGroupOperationFailed = "failed to perform Add Member Operation for instance %s and placement group %s with error %w"
 const DeleteMemberPlacementGroupOperationFailed = "failed to perform Delete Member Operation for instance %s and placement group %s with error %w"
 
-// start of Cloud Connection Messages
-
-const GetCloudConnectionOperationFailed = "failed to perform Get Cloud Connections Operation for cloudconnectionid %s with error %w"
-const CreateCloudConnectionOperationFailed = "failed to perform Create Cloud Connection Operation for cloud instance %s with error %w"
-const UpdateCloudConnectionOperationFailed = "failed to perform Update Cloud Connection Operation for cloudconnectionid %s with error %w"
-const DeleteCloudConnectionOperationFailed = "failed to perform Delete Cloud Connection Operation for cloudconnectionid %s with error %w"
-
-// start of VPN Connection Messages
-
-// const GetVPNConnectionOperationFailed = "failed to perform Get VPN Connection Operation for id %s with error %w"
-// const CreateVPNConnectionOperationFailed = "failed to perform Create VPN Connection Operation for cloud instance %s with error %w"
-// const UpdateVPNConnectionOperationFailed = "failed to perform Update VPN Connection Operation for id  %s with error %w"
-// const DeleteVPNConnectionOperationFailed = "failed to perform Delete VPN Connection Operation for id  %s with error %w"
-
-// start of VPN Policy Messages
-
-// const GetVPNPolicyOperationFailed = "failed to perform Get VPN Policy Operation for Policy id %s with error %w"
-// const CreateVPNPolicyOperationFailed = "failed to perform Create VPN Policy Operation for cloud instance %s with error %w"
-// const UpdateVPNPolicyOperationFailed = "failed to perform Update VPN Policy Operation for Policy id  %s with error %w"
-// const DeleteVPNPolicyOperationFailed = "failed to perform Delete VPN Policy Operation for Policy id  %s with error %w"
-
 // start of Job Messages
 const GetJobOperationFailed = "failed to perform get Job operation for job id %s with error %w"
 const GetAllJobsOperationFailed = "failed to perform get all jobs operation with error %w"
@@ -51,7 +30,6 @@ const DeleteDhcpOperationFailed = "failed to perform Delete DHCP Operation for d
 const GetSystemPoolsOperationFailed = "failed to perform Get System Pools Operation for cloud instance %s with error %w"
 
 // start of Image Messages
-
 const GetImageOperationFailed = "failed to perform Get Image Operation for image %s with error %w"
 const CreateImageOperationFailed = "failed to perform Create Image Operation for cloud instance %s with error  %w"
 
@@ -70,15 +48,6 @@ const AttachVolumeOperationFailed = "failed to perform the Attach volume Operati
 const DetachVolumeOperationFailed = "failed to perform the Detach volume Operation for volume %s with error %w"
 const GetVolumeRemoteCopyRelationshipsOperationFailed = "failed to Get remote copy relationships of a volume %s for the cloud instance %s with error %w"
 const GetVolumeFlashCopyMappingOperationFailed = "failed to Get flash copy mapping of a volume %s for the cloud instance %s with error %w"
-
-// start of volume onboarding
-// const GetVolumeOnboardingOperationFailed = "failed to perform the Get Volume Onboarding Operation for volume-onboarding ID:%s for the cloud instance %s with error %w"
-// const GetAllVolumeOnboardingsOperationFailed = "failed to perform the Get All Volume Onboardings Operation for the cloud instance %s with error %w"
-// const CreateVolumeOnboardingsOperationFailed = "failed to perform the Create Volume Onboarding Operation for the cloud instance %s with error %w"
-
-// start of disaster recovery
-const GetDisasterRecoveryLocationOperationFailed = "failed to perform the Get Disaster Recovery Location Operation for the cloud instance %s with error %w"
-const GetAllDisasterRecoveryLocationOperationFailed = "failed to perform the Get All Disaster Recovery Location Operation of power virtual server with error %w"
 
 // start of Clone Messages
 const StartCloneOperationFailed = "failed to start the clone operation for volumes-clone %s with error %w"
@@ -105,19 +74,6 @@ const DeleteVolumeGroupOperationFailed = "failed to perform Delete volume-group 
 const GetLiveVolumeGroupDetailsOperationFailed = "failed to Get live details of volume-group %s for the cloud instance %s with error %w"
 const VolumeGroupActionOperationFailed = "failed to perform action on volume-group %s for the cloud instance %s with error %w"
 const GetVolumeGroupRemoteCopyRelationshipsOperationFailed = "failed to Get remote copy relationships of the volumes belonging to volume group %s for the cloud instance %s with error %w"
-
-// start of Shared processor pool Messages
-// const GetSharedProcessorPoolOperationFailed = "failed to perform Get Shared Processor Pool Operation for pool %s with error %w"
-// const CreateSharedProcessorPoolOperationFailed = "failed to perform Create Shared Processor Pool Operation for cloud instance %s with error  %w"
-// const DeleteSharedProcessorPoolOperationFailed = "failed to perform Delete Shared Processor Pool Operation for pool %s with error %w"
-// const UpdateSharedProcessorPoolOperationFailed = "failed to perform Update Shared Processor Pool Operation for pool %s with error %w"
-
-// start of Shared processor pool placement group Messages
-// const GetPPCPPlacementGroupOperationFailed = "failed to perform Get Shared Processor Pool Placement Group Operation for placement group %s with error %w"
-// const CreatePPCPPlacementGroupOperationFailed = "failed to perform Create Shared Processor Pool Placement Group Operation for cloud instance %s with error  %w"
-// const DeletePPCPPlacementGroupOperationFailed = "failed to perform Delete Shared Processor Pool Placement Group Operation for placement group %s with error %w"
-// const AddMemberPPCPPlacementGroupOperationFailed = "failed to perform Add Member Operation for pool %s and shared processor pool placement group %s with error %w"
-// const DeleteMemberPPCPPlacementGroupOperationFailed = "failed to perform Delete Member Operation for pool %s and shared processor pool placement group %s with error %w"
 
 // ErrorTarget ...
 type ErrorTarget struct {
