@@ -17,6 +17,7 @@ import (
 )
 
 // NetworkCreate network create
+// Example: {"cidr":"192.168.1.0/24","gateway":"192.168.1.1","ipAddressRanges":[{"endingIPAddress":"192.168.1.254","startingIPAddress":"192.168.1.2"}],"mtu":1450,"name":"sample-network","type":"vlan"}
 //
 // swagger:model NetworkCreate
 type NetworkCreate struct {
