@@ -69,7 +69,7 @@ type InternalV1TransitgatewayGetParams struct {
 
 	/* PowervsServiceCrn.
 
-	   The PowerVS Service Instance CRN (Targeting)
+	   The Power Private Cloud Service Instance CRN (Targeting)
 	*/
 	PowervsServiceCrn string
 

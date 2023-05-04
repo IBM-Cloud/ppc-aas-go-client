@@ -15,7 +15,7 @@ import (
 // IBMPPCSession ...
 type IBMPPCSession struct {
 	CRNFormat string
-	Power     *client.PowerIaasAPI
+	Power     *client.PowerPrivateCloudAsaServiceAPI
 	Options   *IBMPPCOptions
 }
 

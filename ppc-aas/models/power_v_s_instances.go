@@ -15,7 +15,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// PowerVSInstances The List of PowerVS Instances for a specific IBM Cloud Account
+// PowerVSInstances The List of Power Private Cloud Instances for a specific IBM Cloud Account
 //
 // swagger:model PowerVSInstances
 type PowerVSInstances struct {

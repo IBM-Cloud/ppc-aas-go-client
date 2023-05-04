@@ -20,7 +20,7 @@ import (
 // swagger:model TransitGatewayLocations
 type TransitGatewayLocations struct {
 
-	// The List of PER enabled PowerVS Service Locations
+	// The List of PER enabled Power Private Cloud Service Locations
 	// Required: true
 	TransitGatewayLocations []*TransitGatewayLocation `json:"transitGatewayLocations"`
 }

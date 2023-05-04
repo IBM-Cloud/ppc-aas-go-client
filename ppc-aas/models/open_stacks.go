@@ -20,7 +20,7 @@ import (
 // swagger:model OpenStacks
 type OpenStacks struct {
 
-	// OpenStacks managed by Power IAAS
+	// OpenStacks managed by Power Private Cloud
 	// Required: true
 	OpenStacks []*OpenStack `json:"openStacks"`
 }

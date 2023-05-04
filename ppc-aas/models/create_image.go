@@ -52,6 +52,8 @@ type CreateImage struct {
 	SecretKey string `json:"secretKey,omitempty"`
 
 	// Source of the image
+	// >*Note*: url option is deprecated, this option is supported till Oct 2022
+	//
 	// Required: true
 	// Enum: [root-project url]
 	Source *string `json:"source"`

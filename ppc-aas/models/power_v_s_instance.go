@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// PowerVSInstance PowerVS Instance for a specific IBM Cloud Account
+// PowerVSInstance Power Private Cloud Instance for a specific IBM Cloud Account
 //
 // swagger:model PowerVSInstance
 type PowerVSInstance struct {
@@ -23,37 +23,37 @@ type PowerVSInstance struct {
 	// Required: true
 	Capabilities InstanceCapabilities `json:"capabilities"`
 
-	// The timestamp in which the PowerVS service instance was created
+	// The timestamp in which the Power Private Cloud service instance was created
 	// Example: 2022-04-04T16:20:15.581636275Z
 	// Required: true
 	CreationDate *string `json:"creationDate"`
 
-	// The PowerVS Service Instance CRN
-	// Example: crn:v1:bluemix:public:power-iaas:dal12:a/2bc3df23c0d14ebe921397bd8aa2573a:3a5798f1-4d2b-4e0a-9311-9b0fd6b94698::
+	// The Power Private Cloud Service Instance CRN
+	// Example: crn:v1:bluemix:public:ppc-aas:dal12:a/2bc3df23c0d14ebe921397bd8aa2573a:3a5798f1-4d2b-4e0a-9311-9b0fd6b94698::
 	// Required: true
 	Crn *string `json:"crn"`
 
-	// The PowerVS IBM Cloud URL path for UI (Tentative, still need verification that this is possible)
-	// Example: https://cloud.ibm.com/services/power-iaas/crn%3Av1%3Abluemix%3Apublic%3Apower-iaas%3Adal12%3Aa%2F2bc3df23c0d14ebe921397bd8aa2573a%3A5de8348d-bc6a-466e-854f-661d1e86b230%3A%3A
+	// The Power Private Cloud IBM Cloud URL path for UI (Tentative, still need verification that this is possible)
+	// Example: https://cloud.ibm.com/services/ppc-aas/crn%3Av1%3Abluemix%3Apublic%3Appc-aas%3Adal12%3Aa%2F2bc3df23c0d14ebe921397bd8aa2573a%3A5de8348d-bc6a-466e-854f-661d1e86b230%3A%3A
 	// Required: true
 	Href *string `json:"href"`
 
-	// The PowerVS Service Instance ID
+	// The Power Private Cloud Service Instance ID
 	// Example: 3a5798f1-4d2b-4e0a-9311-9b0fd6b94698
 	// Required: true
 	ID *string `json:"id"`
 
-	// Location of the PowerVS Instance
+	// Location of the Power Private Cloud Instance
 	// Example: dal12
 	// Required: true
 	Location *string `json:"location"`
 
-	// The PowerVS URL path to access specific service instance information
-	// Example: https://us-south.power-iaas.cloud.ibm.com
+	// The Power Private Cloud URL path to access specific service instance information
+	// Example: https://us-south.ppc-aas.cloud.ibm.com
 	// Required: true
 	LocationURL *string `json:"locationUrl"`
 
-	// The name of the service instance (This field will be empty for old accounts as PowerVS did not previously saved the names)
+	// The name of the service instance (This field will be empty for old accounts as Power Private Cloud did not previously saved the names)
 	// Example: Test Name
 	// Required: true
 	Name *string `json:"name"`
@@ -63,11 +63,11 @@ type PowerVSInstance struct {
 	// Required: true
 	PrivilegedUser *bool `json:"privilegedUser"`
 
-	// IBM Resource Group ID associated with the PowerVS Service Instance (This field will be empty for old accounts as PowerVS did not previously saved the Resource Group ID)
+	// IBM Resource Group ID associated with the Power Private Cloud Service Instance (This field will be empty for old accounts as Power Private Cloud did not previously saved the Resource Group ID)
 	// Example: 2bf1887bf5c947b1966de2bd88220489
 	ResourceGroupID string `json:"resourceGroupId,omitempty"`
 
-	// The status of the service instance (PowerVS behavior, if Service Instance exists then then status is active)
+	// The status of the service instance (Power Private Cloud behavior, if Service Instance exists then then status is active)
 	// Example: Active
 	// Required: true
 	Status *string `json:"status"`

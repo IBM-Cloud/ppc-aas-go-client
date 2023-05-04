@@ -67,7 +67,7 @@ func main() {
 	}
 	body := &models.NetworkCreate{
 		Type: &netType,
-		Name: name,
+		Name: &name,
 		Mtu:  &mtu,
 	}
 	if netType == "vlan" {

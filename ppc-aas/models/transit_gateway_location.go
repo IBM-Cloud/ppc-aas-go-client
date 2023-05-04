@@ -15,24 +15,24 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// TransitGatewayLocation The PER enabled PowerVS Service Location
+// TransitGatewayLocation The PER enabled Power Private Cloud Service Location
 //
 // swagger:model TransitGatewayLocation
 type TransitGatewayLocation struct {
 
-	// The Location of the PowerVS Service
+	// The Location of the Power Private Cloud Service
 	// Example: dal12
 	// Required: true
 	Location *string `json:"location"`
 
-	// Location Type of the PowerVS Service
+	// Location Type of the Power Private Cloud Service
 	// Example: data-center
 	// Required: true
 	// Enum: [region data-center zone]
 	LocationType *string `json:"locationType"`
 
-	// The PowerVS Location URL path to access specific service instance information
-	// Example: https://us-south.power-iaas.cloud.ibm.com
+	// The Power Private Cloud Location URL path to access specific service instance information
+	// Example: https://us-south.ppc-aas.cloud.ibm.com
 	// Required: true
 	LocationURL *string `json:"locationUrl"`
 }
