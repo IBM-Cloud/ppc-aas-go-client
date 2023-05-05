@@ -43,7 +43,7 @@ import (
 	"github.com/IBM-Cloud/ppc-aas-go-client/ppc-aas/client/swagger_spec"
 )
 
-// Default power iaas API HTTP client.
+// Default power private cloud asa service API HTTP client.
 var Default = NewHTTPClient(nil)
 
 const (
@@ -58,14 +58,14 @@ const (
 // DefaultSchemes are the default schemes found in Meta (info) section of spec file
 var DefaultSchemes = []string{"http"}
 
-// NewHTTPClient creates a new power iaas API HTTP client.
-func NewHTTPClient(formats strfmt.Registry) *PowerIaasAPI {
+// NewHTTPClient creates a new power private cloud asa service API HTTP client.
+func NewHTTPClient(formats strfmt.Registry) *PowerPrivateCloudAsaServiceAPI {
 	return NewHTTPClientWithConfig(formats, nil)
 }
 
-// NewHTTPClientWithConfig creates a new power iaas API HTTP client,
+// NewHTTPClientWithConfig creates a new power private cloud asa service API HTTP client,
 // using a customizable transport config.
-func NewHTTPClientWithConfig(formats strfmt.Registry, cfg *TransportConfig) *PowerIaasAPI {
+func NewHTTPClientWithConfig(formats strfmt.Registry, cfg *TransportConfig) *PowerPrivateCloudAsaServiceAPI {
 	// ensure nullable parameters have default
 	if cfg == nil {
 		cfg = DefaultTransportConfig()
@@ -76,14 +76,14 @@ func NewHTTPClientWithConfig(formats strfmt.Registry, cfg *TransportConfig) *Pow
 	return New(transport, formats)
 }
 
-// New creates a new power iaas API client
-func New(transport runtime.ClientTransport, formats strfmt.Registry) *PowerIaasAPI {
+// New creates a new power private cloud asa service API client
+func New(transport runtime.ClientTransport, formats strfmt.Registry) *PowerPrivateCloudAsaServiceAPI {
 	// ensure nullable parameters have default
 	if formats == nil {
 		formats = strfmt.Default
 	}
 
-	cli := new(PowerIaasAPI)
+	cli := new(PowerPrivateCloudAsaServiceAPI)
 	cli.Transport = transport
 	cli.Authentication = authentication.New(transport, formats)
 	cli.BluemixServiceInstances = bluemix_service_instances.New(transport, formats)
@@ -158,8 +158,8 @@ func (cfg *TransportConfig) WithSchemes(schemes []string) *TransportConfig {
 	return cfg
 }
 
-// PowerIaasAPI is a client for power iaas API
-type PowerIaasAPI struct {
+// PowerPrivateCloudAsaServiceAPI is a client for power private cloud asa service API
+type PowerPrivateCloudAsaServiceAPI struct {
 	Authentication authentication.ClientService
 
 	BluemixServiceInstances bluemix_service_instances.ClientService
@@ -226,7 +226,7 @@ type PowerIaasAPI struct {
 }
 
 // SetTransport changes the transport on the client and all its subresources
-func (c *PowerIaasAPI) SetTransport(transport runtime.ClientTransport) {
+func (c *PowerPrivateCloudAsaServiceAPI) SetTransport(transport runtime.ClientTransport) {
 	c.Transport = transport
 	c.Authentication.SetTransport(transport)
 	c.BluemixServiceInstances.SetTransport(transport)

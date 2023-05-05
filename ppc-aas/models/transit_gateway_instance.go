@@ -22,7 +22,7 @@ type TransitGatewayInstance struct {
 	// errors
 	Errors []*TransitConnectionErrorItem `json:"errors,omitempty"`
 
-	// IBM Resource Group ID associated with the PowerVS Service Instance
+	// IBM Resource Group ID associated with the Power Private Cloud Service Instance
 	// Example: 2bf1887bf5c947b1966de2bd88220489
 	ResourceGroupID string `json:"resourceGroupId,omitempty"`
 
@@ -34,11 +34,11 @@ type TransitGatewayInstance struct {
 	// Example: 47902:3255120092
 	RouteTarget string `json:"routeTarget,omitempty"`
 
-	// The PowerVS Service Instance CRN
-	// Example: crn:v1:bluemix:public:power-iaas:dal12:a/2bc3df23c0d14ebe921397bd8aa2573a:3a5798f1-4d2b-4e0a-9311-9b0fd6b94698::
+	// The Power Private Cloud Service Instance CRN
+	// Example: crn:v1:bluemix:public:ppc-aas:dal12:a/2bc3df23c0d14ebe921397bd8aa2573a:3a5798f1-4d2b-4e0a-9311-9b0fd6b94698::
 	ServiceCrn string `json:"serviceCrn,omitempty"`
 
-	// The PowerVS Service Instance ID
+	// The Power Private Cloud Service Instance ID
 	// Example: 3a5798f1-4d2b-4e0a-9311-9b0fd6b94698
 	ServiceID string `json:"serviceId,omitempty"`
 

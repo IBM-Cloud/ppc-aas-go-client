@@ -63,7 +63,7 @@ type InternalV1PowervsInstancesGetParams struct {
 
 	/* PowervsLocation.
 
-	   The PowerVS Location
+	   The Power Private Cloud Location
 	*/
 	PowervsLocation *string
 

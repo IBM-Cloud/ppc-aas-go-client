@@ -62,7 +62,7 @@ func powerJSONConsumer() runtime.Consumer {
 }
 
 // getSPClient generates a PowerIaas client
-func getSPClient(debug bool, host string, scheme string) *client.PowerIaasAPI {
+func getSPClient(debug bool, host string, scheme string) *client.PowerPrivateCloudAsaServiceAPI {
 	http.DefaultTransport.(*http.Transport).TLSClientConfig = &tls.Config{InsecureSkipVerify: false}
 	if scheme == "" {
 		scheme = SCHEME_HTTPS
