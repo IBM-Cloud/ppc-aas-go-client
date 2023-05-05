@@ -43,7 +43,7 @@ const (
 	PPCInstanceReplicationScheme = "ppc_replication_scheme"
 	PPCInstanceProgress          = "ppc_progress"
 	PPCInstanceUserData          = "ppc_user_data"
-	PPCInstancePinPolicy         = "ppc_spn_policy"
+	PPCInstancePinPolicy         = "ppc_pin_policy"
 
 	// IBM PPC Volume
 	PPCVolumeName              = "ppc_volume_name"
