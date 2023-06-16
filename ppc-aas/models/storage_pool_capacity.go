@@ -19,6 +19,12 @@ import (
 // swagger:model StoragePoolCapacity
 type StoragePoolCapacity struct {
 
+	// Amount of storage allocated (GB)
+	AllocatedCapacity int64 `json:"allocatedCapacity,omitempty"`
+
+	// Available/Unused pool capacity (GB)
+	AvailableCapacity int64 `json:"availableCapacity,omitempty"`
+
 	// Maximum allocation storage size (GB)
 	// Required: true
 	MaxAllocationSize *int64 `json:"maxAllocationSize"`

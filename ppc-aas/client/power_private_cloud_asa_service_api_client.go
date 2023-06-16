@@ -27,6 +27,7 @@ import (
 	"github.com/IBM-Cloud/ppc-aas-go-client/ppc-aas/client/p_cloud_networks"
 	"github.com/IBM-Cloud/ppc-aas-go-client/ppc-aas/client/p_cloud_p_vm_instances"
 	"github.com/IBM-Cloud/ppc-aas-go-client/ppc-aas/client/p_cloud_placement_groups"
+	"github.com/IBM-Cloud/ppc-aas-go-client/ppc-aas/client/p_cloud_pod_capacity"
 	"github.com/IBM-Cloud/ppc-aas-go-client/ppc-aas/client/p_cloud_s_a_p"
 	"github.com/IBM-Cloud/ppc-aas-go-client/ppc-aas/client/p_cloud_service_d_h_c_p"
 	"github.com/IBM-Cloud/ppc-aas-go-client/ppc-aas/client/p_cloud_snapshots"
@@ -102,6 +103,7 @@ func New(transport runtime.ClientTransport, formats strfmt.Registry) *PowerPriva
 	cli.PCloudNetworks = p_cloud_networks.New(transport, formats)
 	cli.PCloudpVMInstances = p_cloud_p_vm_instances.New(transport, formats)
 	cli.PCloudPlacementGroups = p_cloud_placement_groups.New(transport, formats)
+	cli.PCloudPodCapacity = p_cloud_pod_capacity.New(transport, formats)
 	cli.PCloudsap = p_cloud_s_a_p.New(transport, formats)
 	cli.PCloudServicedhcp = p_cloud_service_d_h_c_p.New(transport, formats)
 	cli.PCloudSnapshots = p_cloud_snapshots.New(transport, formats)
@@ -194,6 +196,8 @@ type PowerPrivateCloudAsaServiceAPI struct {
 
 	PCloudPlacementGroups p_cloud_placement_groups.ClientService
 
+	PCloudPodCapacity p_cloud_pod_capacity.ClientService
+
 	PCloudsap p_cloud_s_a_p.ClientService
 
 	PCloudServicedhcp p_cloud_service_d_h_c_p.ClientService
@@ -245,6 +249,7 @@ func (c *PowerPrivateCloudAsaServiceAPI) SetTransport(transport runtime.ClientTr
 	c.PCloudNetworks.SetTransport(transport)
 	c.PCloudpVMInstances.SetTransport(transport)
 	c.PCloudPlacementGroups.SetTransport(transport)
+	c.PCloudPodCapacity.SetTransport(transport)
 	c.PCloudsap.SetTransport(transport)
 	c.PCloudServicedhcp.SetTransport(transport)
 	c.PCloudSnapshots.SetTransport(transport)

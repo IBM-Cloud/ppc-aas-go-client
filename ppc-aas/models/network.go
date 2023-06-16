@@ -21,6 +21,16 @@ import (
 // swagger:model Network
 type Network struct {
 
+	// Network communication configuration
+	//   * `internal-only` - network is only used for internal host communication
+	//   * `outbound-only` - network will be capable of egress traffic
+	//   * `bidirectional-static-route` - network will be capable of ingress and egress traffic via static routes
+	//   * `bidirectional-bgp` - network will be capable of ingress and egress traffic via bgp configuration
+	//   * `bidirectional-l2out` - network will be capable of ingress and egress traffic via l2out ACI configuration
+	//
+	// Enum: [internal-only outbound-only bidirectional-static-route bidirectional-bgp bidirectional-l2out]
+	AccessConfig string `json:"accessConfig,omitempty"`
+
 	// Network in CIDR notation (192.168.0.0/24)
 	// Required: true
 	Cidr *string `json:"cidr"`
@@ -72,6 +82,10 @@ type Network struct {
 func (m *Network) Validate(formats strfmt.Registry) error {
 	var res []error
 
+	if err := m.validateAccessConfig(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.validateCidr(formats); err != nil {
 		res = append(res, err)
 	}
@@ -115,6 +129,57 @@ func (m *Network) Validate(formats strfmt.Registry) error {
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)
 	}
+	return nil
+}
+
+var networkTypeAccessConfigPropEnum []interface{}
+
+func init() {
+	var res []string
+	if err := json.Unmarshal([]byte(`["internal-only","outbound-only","bidirectional-static-route","bidirectional-bgp","bidirectional-l2out"]`), &res); err != nil {
+		panic(err)
+	}
+	for _, v := range res {
+		networkTypeAccessConfigPropEnum = append(networkTypeAccessConfigPropEnum, v)
+	}
+}
+
+const (
+
+	// NetworkAccessConfigInternalDashOnly captures enum value "internal-only"
+	NetworkAccessConfigInternalDashOnly string = "internal-only"
+
+	// NetworkAccessConfigOutboundDashOnly captures enum value "outbound-only"
+	NetworkAccessConfigOutboundDashOnly string = "outbound-only"
+
+	// NetworkAccessConfigBidirectionalDashStaticDashRoute captures enum value "bidirectional-static-route"
+	NetworkAccessConfigBidirectionalDashStaticDashRoute string = "bidirectional-static-route"
+
+	// NetworkAccessConfigBidirectionalDashBgp captures enum value "bidirectional-bgp"
+	NetworkAccessConfigBidirectionalDashBgp string = "bidirectional-bgp"
+
+	// NetworkAccessConfigBidirectionalDashL2out captures enum value "bidirectional-l2out"
+	NetworkAccessConfigBidirectionalDashL2out string = "bidirectional-l2out"
+)
+
+// prop value enum
+func (m *Network) validateAccessConfigEnum(path, location string, value string) error {
+	if err := validate.EnumCase(path, location, value, networkTypeAccessConfigPropEnum, true); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (m *Network) validateAccessConfig(formats strfmt.Registry) error {
+	if swag.IsZero(m.AccessConfig) { // not required
+		return nil
+	}
+
+	// value enum
+	if err := m.validateAccessConfigEnum("accessConfig", "body", m.AccessConfig); err != nil {
+		return err
+	}
+
 	return nil
 }
 
