@@ -61,7 +61,7 @@ func (f *IBMPPCNetworkClient) Create(body *models.NetworkCreate) (*models.Networ
 		WithCloudInstanceID(f.cloudInstanceID).WithBody(body)
 	postok, postcreated, err := f.session.Power.PCloudNetworks.PcloudNetworksPost(params, f.session.AuthInfo(f.cloudInstanceID))
 	if err != nil {
-		return nil, fmt.Errorf(errors.CreateNetworkOperationFailed, body.Name, err)
+		return nil, fmt.Errorf(errors.CreateNetworkOperationFailed, *body.Name, err)
 	}
 	if postok != nil && postok.Payload != nil {
 		return postok.Payload, nil
@@ -69,7 +69,7 @@ func (f *IBMPPCNetworkClient) Create(body *models.NetworkCreate) (*models.Networ
 	if postcreated != nil && postcreated.Payload != nil {
 		return postcreated.Payload, nil
 	}
-	return nil, fmt.Errorf("failed to perform Create Network Operation for Network %s", body.Name)
+	return nil, fmt.Errorf("failed to perform Create Network Operation for Network %s", *body.Name)
 }
 
 // Update a Network

@@ -82,6 +82,7 @@ var InstanceStorageType string = "tier1"                              // INSTANC
 var InstanceVolumeID string = ""                                      // INSTANCE_VOLUME_ID
 
 // Network
+var NetworkAccessConfig string = "internal-only"     // NETWORK_ACCESS_CONFIG
 var NetworkID string = ""                            // NETWORK_ID
 var NetworkName string = "Power-Go-Integration-Test" // NETWORK_NAME
 var NetworkCidr string = "192.168.0.0/24"            // NETWORK_CIDR

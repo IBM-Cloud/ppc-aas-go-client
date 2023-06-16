@@ -50,7 +50,7 @@ func TestInstance(t *testing.T) {
 	// check that instance is successfully created
 	createErr := fmt.Sprintf("Create Instance %s has failed. Still in Build state after %d minutes", InstanceID, ((utl.TimeoutAttempts * utl.JobTimeout) / 60000000000))
 	checkAttempts := 0
-	getResp := &models.PVMInstance{}
+	var getResp *models.PVMInstance
 	for checkAttempts < utl.TimeoutAttempts {
 		getResp, err = instanceClient.Get(InstanceID)
 		require.Nil(t, err)
