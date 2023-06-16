@@ -38,7 +38,7 @@ func TestDHCP(t *testing.T) {
 	// check that DHCP is successfully created
 	createErr := fmt.Sprintf("Create DHCP %s has failed. Still in Build state after %d minutes", dhcpID, ((utl.TimeoutAttempts * utl.JobTimeout) / 60000000000))
 	checkAttempts := 0
-	getResp := &models.DHCPServerDetail{}
+	var getResp *models.DHCPServerDetail
 	for checkAttempts < utl.TimeoutAttempts {
 		getResp, err = dhcpClient.Get(dhcpID)
 		require.Nil(t, err)
