@@ -379,6 +379,11 @@ func (m *PVMInstanceReferenceV2) ContextValidate(ctx context.Context, formats st
 func (m *PVMInstanceReferenceV2) contextValidateConfiguration(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Configuration != nil {
+
+		if swag.IsZero(m.Configuration) { // not required
+			return nil
+		}
+
 		if err := m.Configuration.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("configuration")
@@ -395,6 +400,7 @@ func (m *PVMInstanceReferenceV2) contextValidateConfiguration(ctx context.Contex
 func (m *PVMInstanceReferenceV2) contextValidateCores(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Cores != nil {
+
 		if err := m.Cores.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("cores")
@@ -411,6 +417,7 @@ func (m *PVMInstanceReferenceV2) contextValidateCores(ctx context.Context, forma
 func (m *PVMInstanceReferenceV2) contextValidateDeployment(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Deployment != nil {
+
 		if err := m.Deployment.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("deployment")
@@ -427,6 +434,11 @@ func (m *PVMInstanceReferenceV2) contextValidateDeployment(ctx context.Context, 
 func (m *PVMInstanceReferenceV2) contextValidateHost(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Host != nil {
+
+		if swag.IsZero(m.Host) { // not required
+			return nil
+		}
+
 		if err := m.Host.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("host")
@@ -443,6 +455,7 @@ func (m *PVMInstanceReferenceV2) contextValidateHost(ctx context.Context, format
 func (m *PVMInstanceReferenceV2) contextValidateMemory(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Memory != nil {
+
 		if err := m.Memory.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("memory")
@@ -459,6 +472,7 @@ func (m *PVMInstanceReferenceV2) contextValidateMemory(ctx context.Context, form
 func (m *PVMInstanceReferenceV2) contextValidateOperatingSystem(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.OperatingSystem != nil {
+
 		if err := m.OperatingSystem.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("operatingSystem")
@@ -475,6 +489,11 @@ func (m *PVMInstanceReferenceV2) contextValidateOperatingSystem(ctx context.Cont
 func (m *PVMInstanceReferenceV2) contextValidatePlacementGroup(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.PlacementGroup != nil {
+
+		if swag.IsZero(m.PlacementGroup) { // not required
+			return nil
+		}
+
 		if err := m.PlacementGroup.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("placementGroup")
@@ -491,6 +510,11 @@ func (m *PVMInstanceReferenceV2) contextValidatePlacementGroup(ctx context.Conte
 func (m *PVMInstanceReferenceV2) contextValidateVirtualCores(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.VirtualCores != nil {
+
+		if swag.IsZero(m.VirtualCores) { // not required
+			return nil
+		}
+
 		if err := m.VirtualCores.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("virtualCores")

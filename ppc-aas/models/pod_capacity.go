@@ -7,12 +7,10 @@ package models
 
 import (
 	"context"
-	"strconv"
 
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
-	"github.com/go-openapi/validate"
 )
 
 // PodCapacity List of available resources within a Pod
@@ -23,11 +21,11 @@ type PodCapacity struct {
 	// pod data
 	PodData *PodData `json:"PodData,omitempty"`
 
-	// storage pools
-	StoragePools []*StoragePoolCapacity `json:"StoragePools"`
+	// storage controllers
+	StorageControllers StorageControllers `json:"StorageControllers,omitempty"`
 
-	// List of available system pools within a Pod
-	SystemPools map[string]SystemPool `json:"SystemPools,omitempty"`
+	// system pools
+	SystemPools SystemPoolsCapacity `json:"SystemPools,omitempty"`
 }
 
 // Validate validates this pod capacity
@@ -38,7 +36,7 @@ func (m *PodCapacity) Validate(formats strfmt.Registry) error {
 		res = append(res, err)
 	}
 
-	if err := m.validateStoragePools(formats); err != nil {
+	if err := m.validateStorageControllers(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -71,27 +69,20 @@ func (m *PodCapacity) validatePodData(formats strfmt.Registry) error {
 	return nil
 }
 
-func (m *PodCapacity) validateStoragePools(formats strfmt.Registry) error {
-	if swag.IsZero(m.StoragePools) { // not required
+func (m *PodCapacity) validateStorageControllers(formats strfmt.Registry) error {
+	if swag.IsZero(m.StorageControllers) { // not required
 		return nil
 	}
 
-	for i := 0; i < len(m.StoragePools); i++ {
-		if swag.IsZero(m.StoragePools[i]) { // not required
-			continue
-		}
-
-		if m.StoragePools[i] != nil {
-			if err := m.StoragePools[i].Validate(formats); err != nil {
-				if ve, ok := err.(*errors.Validation); ok {
-					return ve.ValidateName("StoragePools" + "." + strconv.Itoa(i))
-				} else if ce, ok := err.(*errors.CompositeError); ok {
-					return ce.ValidateName("StoragePools" + "." + strconv.Itoa(i))
-				}
-				return err
+	if m.StorageControllers != nil {
+		if err := m.StorageControllers.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("StorageControllers")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("StorageControllers")
 			}
+			return err
 		}
-
 	}
 
 	return nil
@@ -102,22 +93,15 @@ func (m *PodCapacity) validateSystemPools(formats strfmt.Registry) error {
 		return nil
 	}
 
-	for k := range m.SystemPools {
-
-		if err := validate.Required("SystemPools"+"."+k, "body", m.SystemPools[k]); err != nil {
+	if m.SystemPools != nil {
+		if err := m.SystemPools.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("SystemPools")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("SystemPools")
+			}
 			return err
 		}
-		if val, ok := m.SystemPools[k]; ok {
-			if err := val.Validate(formats); err != nil {
-				if ve, ok := err.(*errors.Validation); ok {
-					return ve.ValidateName("SystemPools" + "." + k)
-				} else if ce, ok := err.(*errors.CompositeError); ok {
-					return ce.ValidateName("SystemPools" + "." + k)
-				}
-				return err
-			}
-		}
-
 	}
 
 	return nil
@@ -131,7 +115,7 @@ func (m *PodCapacity) ContextValidate(ctx context.Context, formats strfmt.Regist
 		res = append(res, err)
 	}
 
-	if err := m.contextValidateStoragePools(ctx, formats); err != nil {
+	if err := m.contextValidateStorageControllers(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -148,6 +132,11 @@ func (m *PodCapacity) ContextValidate(ctx context.Context, formats strfmt.Regist
 func (m *PodCapacity) contextValidatePodData(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.PodData != nil {
+
+		if swag.IsZero(m.PodData) { // not required
+			return nil
+		}
+
 		if err := m.PodData.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("PodData")
@@ -161,21 +150,19 @@ func (m *PodCapacity) contextValidatePodData(ctx context.Context, formats strfmt
 	return nil
 }
 
-func (m *PodCapacity) contextValidateStoragePools(ctx context.Context, formats strfmt.Registry) error {
+func (m *PodCapacity) contextValidateStorageControllers(ctx context.Context, formats strfmt.Registry) error {
 
-	for i := 0; i < len(m.StoragePools); i++ {
+	if swag.IsZero(m.StorageControllers) { // not required
+		return nil
+	}
 
-		if m.StoragePools[i] != nil {
-			if err := m.StoragePools[i].ContextValidate(ctx, formats); err != nil {
-				if ve, ok := err.(*errors.Validation); ok {
-					return ve.ValidateName("StoragePools" + "." + strconv.Itoa(i))
-				} else if ce, ok := err.(*errors.CompositeError); ok {
-					return ce.ValidateName("StoragePools" + "." + strconv.Itoa(i))
-				}
-				return err
-			}
+	if err := m.StorageControllers.ContextValidate(ctx, formats); err != nil {
+		if ve, ok := err.(*errors.Validation); ok {
+			return ve.ValidateName("StorageControllers")
+		} else if ce, ok := err.(*errors.CompositeError); ok {
+			return ce.ValidateName("StorageControllers")
 		}
-
+		return err
 	}
 
 	return nil
@@ -183,14 +170,17 @@ func (m *PodCapacity) contextValidateStoragePools(ctx context.Context, formats s
 
 func (m *PodCapacity) contextValidateSystemPools(ctx context.Context, formats strfmt.Registry) error {
 
-	for k := range m.SystemPools {
+	if swag.IsZero(m.SystemPools) { // not required
+		return nil
+	}
 
-		if val, ok := m.SystemPools[k]; ok {
-			if err := val.ContextValidate(ctx, formats); err != nil {
-				return err
-			}
+	if err := m.SystemPools.ContextValidate(ctx, formats); err != nil {
+		if ve, ok := err.(*errors.Validation); ok {
+			return ve.ValidateName("SystemPools")
+		} else if ce, ok := err.(*errors.CompositeError); ok {
+			return ce.ValidateName("SystemPools")
 		}
-
+		return err
 	}
 
 	return nil

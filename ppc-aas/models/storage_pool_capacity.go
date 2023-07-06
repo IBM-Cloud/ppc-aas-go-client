@@ -19,9 +19,6 @@ import (
 // swagger:model StoragePoolCapacity
 type StoragePoolCapacity struct {
 
-	// Amount of storage allocated (GB)
-	AllocatedCapacity int64 `json:"allocatedCapacity,omitempty"`
-
 	// Available/Unused pool capacity (GB)
 	AvailableCapacity int64 `json:"availableCapacity,omitempty"`
 
@@ -31,6 +28,9 @@ type StoragePoolCapacity struct {
 
 	// Pool name
 	PoolName string `json:"poolName,omitempty"`
+
+	// Storage host/controller for this storage pool
+	StorageHost string `json:"storageHost,omitempty"`
 
 	// Storage type of the storage pool
 	StorageType string `json:"storageType,omitempty"`
