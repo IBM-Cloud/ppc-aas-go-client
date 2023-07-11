@@ -8,8 +8,10 @@ package models
 import (
 	"context"
 
+	"github.com/go-openapi/errors"
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
+	"github.com/go-openapi/validate"
 )
 
 // PodData Description of a PPCaaS Pod
@@ -18,29 +20,132 @@ import (
 type PodData struct {
 
 	// Number of available cores in the Pod
-	AvailableCores float64 `json:"availableCores,omitempty"`
+	// Required: true
+	Cores *float64 `json:"cores"`
 
 	// Amount of available memory in the Pod (GB)
-	AvailableMemory int64 `json:"availableMemory,omitempty"`
-
-	// Amount of available storage in the Pod (GB)
-	AvailableStorage int64 `json:"availableStorage,omitempty"`
+	// Required: true
+	Memory *int64 `json:"memory"`
 
 	// ID of the Satellite Location
-	SatLocationID string `json:"satLocationID,omitempty"`
+	// Required: true
+	SatLocationID *string `json:"satLocationID"`
+
+	// Amount of available storage in the Pod (GB)
+	// Required: true
+	Storage *int64 `json:"storage"`
 
 	// Total number of cores in the Pod
-	TotalCores float64 `json:"totalCores,omitempty"`
+	// Required: true
+	TotalCores *float64 `json:"totalCores"`
 
 	// Total amount of memory in the Pod (GB)
-	TotalMemory int64 `json:"totalMemory,omitempty"`
+	// Required: true
+	TotalMemory *int64 `json:"totalMemory"`
 
 	// Total amount of storage in the Pod (GB)
-	TotalStorage int64 `json:"totalStorage,omitempty"`
+	// Required: true
+	TotalStorage *int64 `json:"totalStorage"`
 }
 
 // Validate validates this pod data
 func (m *PodData) Validate(formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.validateCores(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateMemory(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateSatLocationID(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateStorage(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateTotalCores(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateTotalMemory(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateTotalStorage(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *PodData) validateCores(formats strfmt.Registry) error {
+
+	if err := validate.Required("cores", "body", m.Cores); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *PodData) validateMemory(formats strfmt.Registry) error {
+
+	if err := validate.Required("memory", "body", m.Memory); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *PodData) validateSatLocationID(formats strfmt.Registry) error {
+
+	if err := validate.Required("satLocationID", "body", m.SatLocationID); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *PodData) validateStorage(formats strfmt.Registry) error {
+
+	if err := validate.Required("storage", "body", m.Storage); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *PodData) validateTotalCores(formats strfmt.Registry) error {
+
+	if err := validate.Required("totalCores", "body", m.TotalCores); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *PodData) validateTotalMemory(formats strfmt.Registry) error {
+
+	if err := validate.Required("totalMemory", "body", m.TotalMemory); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *PodData) validateTotalStorage(formats strfmt.Registry) error {
+
+	if err := validate.Required("totalStorage", "body", m.TotalStorage); err != nil {
+		return err
+	}
+
 	return nil
 }
 

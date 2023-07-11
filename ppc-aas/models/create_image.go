@@ -214,6 +214,11 @@ func (m *CreateImage) ContextValidate(ctx context.Context, formats strfmt.Regist
 func (m *CreateImage) contextValidateStorageAffinity(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.StorageAffinity != nil {
+
+		if swag.IsZero(m.StorageAffinity) { // not required
+			return nil
+		}
+
 		if err := m.StorageAffinity.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("storageAffinity")
